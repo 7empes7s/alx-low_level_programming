@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+
 /**
- * main - main block
- * Return: 1
+ * main - Entry point
+ *
+ * Return: Always 1 (Error)
  */
 int main(void)
 {
-	int s = strlen("and that piece of art is useful - Dora Korpar, 2015-10-19\n");
+	char *str = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	int len = strlen(str);
 
-	write(2,
-	      "and that piece of art is useful - Dora Korpar, 2015-10-19\n",
-	      s);
+	write(2, str, len);
+
 	return (1);
 }
